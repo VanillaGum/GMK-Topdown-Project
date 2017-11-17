@@ -100,15 +100,8 @@
       <sprite>sprites\spr_marky</sprite>
     </sprites>
     <sprites name="THESE SPRITES NEED NAMES!!! ASAP!!">
-      <sprite>sprites\sprite5</sprite>
-      <sprite>sprites\sprite76</sprite>
-      <sprite>sprites\sprite58</sprite>
-      <sprite>sprites\sprite55</sprite>
-      <sprite>sprites\sprite77</sprite>
-      <sprite>sprites\sprite60</sprite>
-      <sprite>sprites\sprite31</sprite>
-      <sprite>sprites\sprite37</sprite>
-      <sprite>sprites\sprite4</sprite>
+      <sprite>sprites\spr_fence_wood</sprite>
+      <sprite>sprites\spr_button_name</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -156,12 +149,6 @@
     <script>scripts\draw_text_outline.gml</script>
     <script>scripts\scr_sleeping.gml</script>
     <script>scripts\scr_sex.gml</script>
-    <scripts name="Menu Scripts">
-      <script>scripts\&lt;undefined&gt;.gml</script>
-    </scripts>
-    <scripts name="Save System">
-      <script>scripts\&lt;undefined&gt;.gml</script>
-    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
