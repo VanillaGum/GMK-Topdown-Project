@@ -185,11 +185,6 @@
     <object>objects\obj_auto_gate</object>
     <object>objects\obj_water</object>
     <object>objects\obj_water_border</object>
-    <object>objects\obj_house01</object>
-    <object>objects\obj_house02</object>
-    <object>objects\obj_house03</object>
-    <object>objects\obj_house04</object>
-    <object>objects\obj_house05</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
