@@ -156,12 +156,6 @@
     <script>scripts\draw_text_outline.gml</script>
     <script>scripts\scr_sleeping.gml</script>
     <script>scripts\scr_sex.gml</script>
-    <scripts name="Menu Scripts">
-      <script>scripts\&lt;undefined&gt;.gml</script>
-    </scripts>
-    <scripts name="Save System">
-      <script>scripts\&lt;undefined&gt;.gml</script>
-    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
