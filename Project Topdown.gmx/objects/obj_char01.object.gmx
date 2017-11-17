@@ -317,7 +317,7 @@ image_alpha=1
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_water">
+    <event eventtype="4" ename="obj_machine">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -334,13 +334,10 @@ image_alpha=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if irandom(40)==2 &amp;&amp; (x&lt;room_width-16) &amp;&amp; (x&gt;16) &amp;&amp; (y&lt;room_height-16) &amp;&amp; (y&gt;16) &amp;&amp; (!place_meeting(x,y,obj_water_border))
-{
-amount=0.4;
-path_end();
-x+=choose(-amount,amount,0);
-y+=choose(-amount,amount,0);
-}
+            <string>path_end();
+instance_change(obj_char01dead,0);
+image_angle=0;
+
 </string>
           </argument>
         </arguments>
@@ -373,32 +370,6 @@ need_to_go=false;
 dump_timer=0;
 state=states.normal;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_machine">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>path_end();
-instance_change(obj_char01dead,0);
-image_angle=0;
-
 </string>
           </argument>
         </arguments>
@@ -469,6 +440,35 @@ my_health+=level/30;
 other.state+=.1;
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_water">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if irandom(40)==2 &amp;&amp; (x&lt;room_width-16) &amp;&amp; (x&gt;16) &amp;&amp; (y&lt;room_height-16) &amp;&amp; (y&gt;16) &amp;&amp; (!place_meeting(x,y,obj_water_border))
+{
+amount=0.4;
+path_end();
+x+=choose(-amount,amount,0);
+y+=choose(-amount,amount,0);
+}
 </string>
           </argument>
         </arguments>
