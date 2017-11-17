@@ -273,12 +273,13 @@ global.build=false;
           <argument>
             <kind>1</kind>
             <string>///Zoom In
+var amt = 1.05;
 //Zooms Camera
-view_wview[0]*=1.02;
-view_hview[0]*=1.02;
+view_wview[0]*=amt;
+view_hview[0]*=amt;
 //Calculate offset of the zoom to set the location of camera
-var offsetx = ((view_wview[0]*1.02)-view_wview[0]);
-var offsety = ((view_hview[0]*1.02)-view_hview[0]);
+var offsetx = ((view_wview[0]*amt)-view_wview[0]);
+var offsety = ((view_hview[0]*amt)-view_hview[0]);
 //Zoom off middle of screen
 view_xview[0] -= offsetx/2;
 view_yview[0] -= offsety/2;
@@ -312,22 +313,17 @@ window_mouse_set(window_get_width()/2,window_get_height()/2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_wview[0]*=0.98;
-view_hview[0]*=0.98;
+            <string>var amt=0.95;
+view_wview[0]*=amt;
+view_hview[0]*=amt;
 
 //Calculate offset of the zoom to set the location of camera
-var offsetx = abs((view_wview[0]*0.98)-view_wview[0]);
-var offsety = abs((view_hview[0]*0.98)-view_hview[0]);
+var offsetx = abs((view_wview[0]*amt)-view_wview[0]);
+var offsety = abs((view_hview[0]*amt)-view_hview[0]);
 //Zoom off middle of screen
 view_xview[0] += offsetx/2;
 view_yview[0] += offsety/2;
-/*
-view_wview[0]=960;
-view_hview[0]=540;
-view_xview[0]=mouse_x-view_wview[0]/2;
-view_yview[0]=mouse_y-view_hview[0]/2;
-window_mouse_set(window_get_width()/2,window_get_height()/2);
-*/
+
 
 </string>
           </argument>
