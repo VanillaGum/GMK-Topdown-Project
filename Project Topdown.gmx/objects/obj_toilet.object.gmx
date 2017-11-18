@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="6" enumb="5">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,12 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.build==true
+            <string>if (position_meeting(mouse_x,mouse_y,self)) &amp;&amp; (global.build==true) &amp;&amp; mouse_check_button(mb_right)
 {
-
-global.toilet++;
 instance_destroy();
+global.toilet++
 
+// Update obstacles
+mp_grid_clear_cell(global.grid,mouse_x,mouse_y);
+var mx = (mouse_x div 32)
+var my = (mouse_y div 32)
+mp_grid_clear_cell(global.grid,mx,my);
 }
 </string>
           </argument>
