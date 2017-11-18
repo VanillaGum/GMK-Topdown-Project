@@ -273,7 +273,7 @@ global.build=false;
           <argument>
             <kind>1</kind>
             <string>///Zoom In
-var amt = 1.05;
+var amt = 1.10;
 //Zooms Camera
 view_wview[0]*=amt;
 view_hview[0]*=amt;
@@ -313,7 +313,7 @@ window_mouse_set(window_get_width()/2,window_get_height()/2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var amt=0.95;
+            <string>var amt=0.90;
 view_wview[0]*=amt;
 view_hview[0]*=amt;
 
