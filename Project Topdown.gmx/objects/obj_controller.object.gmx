@@ -394,15 +394,14 @@ view_wview[0]*=amt;
 view_hview[0]*=amt;
     //Make Sure View not more than 1.5x of screen
     if(view_wview[0]&gt;2880) {
-    //xdiff = 2860 - view_wview[0];
-    //ydiff = 1620 - view_hview[0];
+    xdiff = abs(2860 - view_wview[0]);
+    ydiff = abs(1620 - view_hview[0]);
     //xdiff = abs(view_wview[0] - 2860);
     //ydiff = abs(view_hview[0] - 1620);
     view_wview[0]=2860;
     view_hview[0]=1620;
-    }else {
-    scr_offset_calculate(amt,xdiff,ydiff,0)
     }
+    scr_offset_calculate(amt,xdiff,ydiff,0)
     /*else {
         //Calculate offset of the zoom to set the location of camera
         var offsetx = ((view_wview[0]*amt)-view_wview[0]);
@@ -451,8 +450,8 @@ if (view_wview[0] != 480) {
     view_wview[0]*=amt;
     view_hview[0]*=amt;
     if (view_wview[0] &lt; 480) {
-    xdiff = abs(480 - view_wview[0]);
-    ydiff = abs(270 - view_hview[0]);
+    //xdiff = abs(480 - view_wview[0]);
+    //ydiff = abs(270 - view_hview[0]);
     view_wview[0] = 480;
     view_hview[0] = 270;
     }
