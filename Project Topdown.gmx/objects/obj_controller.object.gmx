@@ -859,7 +859,10 @@ draw_sprite(spr_grid,0,3072,3072);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if n &gt; instance_number(obj_char01)-2
+            <string>if global.menu_opened == false
+{
+
+if n &gt; instance_number(obj_char01)-2
 {
 n=0;
 }
@@ -871,6 +874,8 @@ n++;
 monster_pos = instance_find(obj_char01,n);
 view_xview[0]=monster_pos.x-view_wview[0]/2;
 view_yview[0]=monster_pos.y-view_hview[0]/2;
+
+}
 </string>
           </argument>
         </arguments>
