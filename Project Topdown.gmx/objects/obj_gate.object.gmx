@@ -88,6 +88,8 @@ open=true;
 mp_grid_clear_cell(global.grid,x div 32,y div 32);
 image_index=1;
 }
+
+with(obj_char01){selected=false;}
 </string>
           </argument>
         </arguments>
