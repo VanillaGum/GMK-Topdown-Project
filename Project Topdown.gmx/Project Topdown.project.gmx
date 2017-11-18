@@ -149,6 +149,8 @@
     <script>scripts\draw_text_outline.gml</script>
     <script>scripts\scr_sleeping.gml</script>
     <script>scripts\scr_sex.gml</script>
+    <script>scripts\scr_zoom_check.gml</script>
+    <script>scripts\scr_offset_calculate.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
