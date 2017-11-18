@@ -165,10 +165,14 @@ if irandom(20)==12{effect_create_above(ef_smoke,x+h_cent+random_range(-16,16),y+
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if global.build==true
+{
+
+
 global.machine++;
 instance_destroy();
 
+}
 </string>
           </argument>
         </arguments>

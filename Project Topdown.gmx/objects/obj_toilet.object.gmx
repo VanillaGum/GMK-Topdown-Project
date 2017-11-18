@@ -25,8 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.toilet++;
+            <string>if global.build==true
+{
+
+global.toilet++;
 instance_destroy();
+
+}
 </string>
           </argument>
         </arguments>
