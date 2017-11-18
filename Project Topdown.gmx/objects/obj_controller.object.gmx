@@ -272,17 +272,35 @@ global.build=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Zoom In
+            <string>///Zoom out
 var amt = 1.10;
 //Zooms Camera
+if (view_wview[0] &lt; 2880) {
 view_wview[0]*=amt;
 view_hview[0]*=amt;
+}
+if(view_wview[0]&gt;2880) {
+view_wview[0]=2860;
+view_hview[0]=1620;
+}
 //Calculate offset of the zoom to set the location of camera
 var offsetx = ((view_wview[0]*amt)-view_wview[0]);
 var offsety = ((view_hview[0]*amt)-view_hview[0]);
 //Zoom off middle of screen
 view_xview[0] -= offsetx/2;
 view_yview[0] -= offsety/2;
+if (view_xview[0] &lt; 0) {
+    view_xview[0] = 0;
+}
+if(view_xview[0] &gt; room_width) {
+    view_xview[0] = room_width;
+}
+if (view_yview[0] &lt; 0) {
+    view_yview[0] = 0;
+}
+if(view_yview[0] &gt; room_height) {
+    view_yview[0] = room_height;
+}
 /*
 
 view_wview[0]=960*2;
@@ -313,10 +331,12 @@ window_mouse_set(window_get_width()/2,window_get_height()/2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var amt=0.90;
+            <string>//Zoom in
+var amt =0.90;
+
 view_wview[0]*=amt;
 view_hview[0]*=amt;
-
+//if (view_wview[])
 //Calculate offset of the zoom to set the location of camera
 var offsetx = abs((view_wview[0]*amt)-view_wview[0]);
 var offsety = abs((view_hview[0]*amt)-view_hview[0]);
