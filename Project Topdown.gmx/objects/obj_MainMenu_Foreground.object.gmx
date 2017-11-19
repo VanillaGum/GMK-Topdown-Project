@@ -44,5 +44,8 @@ y = 288;
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>246,246</point>
+    <point>246,246</point>
+  </PhysicsShapePoints>
 </object>
