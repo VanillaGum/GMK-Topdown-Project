@@ -783,12 +783,6 @@ if string_length(keyboard_string) &gt; 12
 
 
 
-draw_text(view_xview[0]+64,view_yview[0]+128,"target: "+string(global.ident));
-draw_text(view_xview[0]+64,view_yview[0]+160,"actor: "+string(global.actor));
-draw_text(view_xview[0]+64,view_yview[0]+192,"number: "+string(n));
-draw_text(view_xview[0]+64,view_yview[0]+224,"instance number: "+string(instance_number(obj_char01)));
-
-
 
 if mouse_check_button(mb_left)
 {
@@ -803,6 +797,7 @@ rect=false;
 }
 
 draw_sprite(spr_cursor,0,mouse_x,mouse_y);
+
 </string>
           </argument>
         </arguments>
