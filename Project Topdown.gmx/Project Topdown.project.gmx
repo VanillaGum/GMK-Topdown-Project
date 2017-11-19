@@ -6,7 +6,12 @@
   <NewExtensions>
     <extension index="0">extensions\Draw Text Outlined</extension>
   </NewExtensions>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_MainMenu</sound>
+    <sounds name="Game Music">
+      <sound>sound\snd_GameMusic</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Monster Sprites">
       <sprite>sprites\spr_char01_dotted</sprite>
@@ -104,6 +109,37 @@
       <sprite>sprites\spr_button_name</sprite>
     </sprites>
     <sprite>sprites\test</sprite>
+    <sprites name="Main Menu ">
+      <sprites name="NewGame Buttons">
+        <sprite>sprites\spr_NewGameB</sprite>
+      </sprites>
+      <sprites name="Continue Buttons">
+        <sprite>sprites\spr_ContinueB</sprite>
+      </sprites>
+      <sprites name="Multiplayer Buttons">
+        <sprite>sprites\spr_MultiplayerB</sprite>
+      </sprites>
+      <sprites name="Options Buttons">
+        <sprite>sprites\spr_OptionsB</sprite>
+      </sprites>
+      <sprites name="Exit Buttons">
+        <sprite>sprites\spr_ExitB</sprite>
+      </sprites>
+      <sprites name="Main Menu Cursor">
+        <sprite>sprites\spr_MainMenu_Cursor</sprite>
+      </sprites>
+      <sprites name="MainMenu_Fore/Background">
+        <sprite>sprites\spr_MainMenu_Foreground</sprite>
+      </sprites>
+      <sprite>sprites\spr_SplashScreen_Test</sprite>
+      <sprite>sprites\spr_BackButton</sprite>
+    </sprites>
+    <sprites name="Multiplayer Menu">
+      <sprite>sprites\spr_Multiplayer_Background</sprite>
+    </sprites>
+    <sprites name="Options Menu">
+      <sprite>sprites\spr_Options_Background</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background1</background>
@@ -152,6 +188,7 @@
     <script>scripts\scr_sex.gml</script>
     <script>scripts\scr_zoom_check.gml</script>
     <script>scripts\scr_offset_calculate.gml</script>
+    <script>scripts\scr_MainMenu_Button_Collision_Check.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
@@ -213,8 +250,27 @@
       <object>objects\obj_cursor</object>
       <object>objects\obj_char01dead</object>
     </objects>
+    <objects name="MainMenu ">
+      <object>objects\obj_NewGame_Button</object>
+      <object>objects\obj_Continue_Button</object>
+      <object>objects\obj_Multiplayer_Button</object>
+      <object>objects\obj_Options_Button</object>
+      <object>objects\obj_Exit_Button</object>
+      <object>objects\obj_MainMenu_Cursor</object>
+      <object>objects\obj_MainMenu_Foreground</object>
+      <object>objects\obj_Back_Button</object>
+    </objects>
+    <objects name="OptionsMenu">
+      <object>objects\obj_OptionsMenu</object>
+    </objects>
+    <objects name="Multiplayer Menu">
+      <object>objects\obj_MultiplayerMenu</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_MainMenu</room>
+    <room>rooms\rm_Options</room>
+    <room>rooms\rm_Multiplayer</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
