@@ -12,6 +12,13 @@
   <showcolour>-1</showcolour>
   <code>sound_volume(snd_MainMenu, 0.3);
 
+//Stop game music IF it's playing for what reason ever
+if audio_is_playing(snd_GameMusic)
+{
+audio_stop_sound(snd_GameMusic);
+}
+
+//play the title music if it's not playing already
 if !audio_is_playing(snd_MainMenu)
 {
 audio_play_sound(snd_MainMenu, 10, true);
