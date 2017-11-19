@@ -56,39 +56,17 @@ image_index=irandom(2);
 || (place_meeting(x,y-32,obj_flower)) 
 || (place_meeting(x,y-32,obj_char01dead)) || (place_meeting(x,y-32,obj_machine))
 
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>
-global.bush ++;
+if (position_meeting(mouse_x,mouse_y,self)) &amp;&amp; (global.build==true) &amp;&amp; mouse_check_button(mb_right)
+{
 instance_destroy();
+global.bush++
 
 // Update obstacles
 mp_grid_clear_cell(global.grid,mouse_x,mouse_y);
 var mx = (mouse_x div 32)
 var my = (mouse_y div 32)
 mp_grid_clear_cell(global.grid,mx,my);
-
+}
 </string>
           </argument>
         </arguments>

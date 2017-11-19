@@ -33,6 +33,39 @@ image_speed=0;
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (position_meeting(mouse_x,mouse_y,self)) &amp;&amp; (global.build==true) &amp;&amp; mouse_check_button(mb_right)
+{
+instance_destroy();
+global.autogate++
+
+// Update obstacles
+mp_grid_clear_cell(global.grid,mouse_x,mouse_y);
+var mx = (mouse_x div 32)
+var my = (mouse_y div 32)
+mp_grid_clear_cell(global.grid,mx,my);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_char01">
       <action>
         <libid>1</libid>
@@ -56,30 +89,6 @@ open=false;
 mp_grid_add_instances(global.grid, obj_auto_gate, false);
 image_index=0;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.autogate++;
-instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -115,6 +124,8 @@ open=true;
 mp_grid_clear_cell(global.grid,x div 32,y div 32);
 image_index=1;
 }
+
+with(obj_char01){selected=false;}
 </string>
           </argument>
         </arguments>

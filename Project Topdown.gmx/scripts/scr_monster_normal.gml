@@ -11,9 +11,10 @@ dump_timer=room_speed*(level/5);
 }
 
 //randomly going somewhere
-wild_rand=irandom(300-wild_level);
+wild_rand=irandom(300-wild_level); //300
 
 if (my_hunger>65) && (irandom((wild_rand)+(floor(my_hunger/10))+1)==5) && (instance_exists(obj_food)) && (dump_timer<=0)
+
 {
 scr_move_to_food();
 }

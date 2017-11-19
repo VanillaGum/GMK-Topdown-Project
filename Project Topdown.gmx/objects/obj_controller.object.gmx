@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-9999990</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -114,7 +114,7 @@ db_timer=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///double click
+            <string>//double click
 
 //mouse click init
     if mouse_check_button_pressed(mb_left)
@@ -204,6 +204,131 @@ global.build=false;
 }
 
 
+//toggle fullscreen
+if keyboard_check_pressed(vk_f10)
+{
+if window_get_fullscreen()
+{
+window_set_fullscreen(false);
+}
+else
+{
+window_set_fullscreen(true);
+}
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="87">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(view_yview[0] != 0) {
+    view_yview[0]-=30;
+    if(view_yview[0] &lt; 0) {
+        view_yview[0] = 0;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="83">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(view_yview[0] != room_height) {
+    view_yview[0]+=30;
+    if(view_yview[0] &gt; (room_height-view_hview[0])) {
+        view_yview[0] = (room_height-view_hview[0]);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(view_xview[0] != room_width) {
+    view_xview[0]+=30;
+    if(view_xview[0] &gt; (room_width-view_wview[0])) {
+        view_xview[0] = (room_width-view_wview[0]);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="65">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(view_xview[0] != 0) {
+    view_xview[0]-=30;
+    if(view_xview[0] &lt; 0) {
+        view_xview[0] = 0;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -272,17 +397,34 @@ global.build=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Zoom In
-var amt = 1.05;
+            <string>///Zoom out
+var amt = 1.10;
+var xdiff = 0;
+var ydiff = 0;
 //Zooms Camera
+if (view_wview[0] != 2880) {
 view_wview[0]*=amt;
 view_hview[0]*=amt;
-//Calculate offset of the zoom to set the location of camera
-var offsetx = ((view_wview[0]*amt)-view_wview[0]);
-var offsety = ((view_hview[0]*amt)-view_hview[0]);
-//Zoom off middle of screen
-view_xview[0] -= offsetx/2;
-view_yview[0] -= offsety/2;
+    //Make Sure View not more than 1.5x of screen
+    if(view_wview[0]&gt;2880) {
+    xdiff = abs(2860 - view_wview[0]);
+    ydiff = abs(1620 - view_hview[0]);
+    //xdiff = abs(view_wview[0] - 2860);
+    //ydiff = abs(view_hview[0] - 1620);
+    view_wview[0]=2860;
+    view_hview[0]=1620;
+    }
+    scr_offset_calculate(amt,xdiff,ydiff,0)
+    /*else {
+        //Calculate offset of the zoom to set the location of camera
+        var offsetx = ((view_wview[0]*amt)-view_wview[0]);
+        var offsety = ((view_hview[0]*amt)-view_hview[0]);
+        //Zoom off middle of screen
+        view_xview[0] -= offsetx/2;
+        view_yview[0] -= offsety/2;
+        scr_zoom_check();
+    }*/
+}
 /*
 
 view_wview[0]=960*2;
@@ -313,18 +455,32 @@ window_mouse_set(window_get_width()/2,window_get_height()/2);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var amt=0.95;
-view_wview[0]*=amt;
-view_hview[0]*=amt;
-
-//Calculate offset of the zoom to set the location of camera
-var offsetx = abs((view_wview[0]*amt)-view_wview[0]);
-var offsety = abs((view_hview[0]*amt)-view_hview[0]);
-//Zoom off middle of screen
-view_xview[0] += offsetx/2;
-view_yview[0] += offsety/2;
-
-
+            <string>///Zoom in
+var amt =0.90;
+var xdiff = 0;
+var ydiff = 0;
+if (view_wview[0] != 480) {
+    view_wview[0]*=amt;
+    view_hview[0]*=amt;
+    if (view_wview[0] &lt; 480) {
+    //xdiff = abs(480 - view_wview[0]);
+    //ydiff = abs(270 - view_hview[0]);
+    view_wview[0] = 480;
+    view_hview[0] = 270;
+    }
+    scr_offset_calculate(amt,xdiff,ydiff,1)
+    /*
+    else {
+        //Calculate offset of the zoom to set the location of camera
+        var offsetx = abs((view_wview[0]*amt)-view_wview[0]);
+        var offsety = abs((view_hview[0]*amt)-view_hview[0]);
+        //Zoom off middle of screen
+        view_xview[0] += offsetx/2;
+        view_yview[0] += offsety/2;
+        scr_zoom_check();
+    }
+    */
+}
 </string>
           </argument>
         </arguments>
@@ -716,7 +872,10 @@ draw_sprite(spr_grid,0,3072,3072);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if n &gt; instance_number(obj_char01)-2
+            <string>if global.menu_opened == false
+{
+
+if n &gt; instance_number(obj_char01)-2
 {
 n=0;
 }
@@ -728,6 +887,8 @@ n++;
 monster_pos = instance_find(obj_char01,n);
 view_xview[0]=monster_pos.x-view_wview[0]/2;
 view_yview[0]=monster_pos.y-view_hview[0]/2;
+
+}
 </string>
           </argument>
         </arguments>
