@@ -64,7 +64,7 @@
     <sprites name="Buying Menu and build menu">
       <sprite>sprites\spr_build_item_grid</sprite>
       <sprite>sprites\spr_grid</sprite>
-      <sprite>sprites\spr_field_sell</sprite>
+      <sprite>sprites\spr_sell_field</sprite>
       <sprite>sprites\spr_buy_field</sprite>
       <sprite>sprites\spr_tab_buy</sprite>
       <sprite>sprites\spr_tab2</sprite>
