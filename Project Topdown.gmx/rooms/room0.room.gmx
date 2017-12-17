@@ -958,6 +958,7 @@ audio_play_sound(snd_GameMusic, 10, true);
     <instance objName="obj_wall" x="2912" y="1792" name="inst_FDE10EC1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="2880" y="1792" name="inst_D1E0F28F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="2944" y="1792" name="inst_0AE7DC98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_temp_shop_open" x="32" y="0" name="inst_3BBD7231" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bck_sand_standard" x="0" y="0" w="128" h="128" xo="0" yo="0" id="10003461" name="inst_D261D16C" depth="1530494977" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -65,6 +65,8 @@
       <sprite>sprites\spr_build_item_grid</sprite>
       <sprite>sprites\spr_grid</sprite>
       <sprite>sprites\spr_field_sell</sprite>
+      <sprite>sprites\spr_field_box</sprite>
+      <sprite>sprites\spr_field</sprite>
       <sprite>sprites\spr_buy_field</sprite>
       <sprite>sprites\spr_tab_buy</sprite>
       <sprite>sprites\spr_tab2</sprite>
@@ -207,14 +209,16 @@
       <object>objects\obj_button_name</object>
     </objects>
     <objects name="Buying Menu">
-      <object>objects\obj_tab_buy</object>
       <object>objects\obj_menu_main</object>
+      <object>objects\obj_tab_buy</object>
       <object>objects\obj_tab_sell</object>
       <object>objects\obj_tab_build</object>
       <object>objects\obj_field_buy</object>
       <object>objects\obj_field_sell</object>
       <object>objects\obj_field_build</object>
       <object>objects\obj_ring_menu</object>
+      <object>objects\obj_field_test</object>
+      <object>objects\obj_temp_shop_open</object>
     </objects>
     <objects name="Icons">
       <object>objects\obj_sleep_icon</object>
