@@ -31,6 +31,7 @@ if (amt_of_rows &lt; 1) {
     amt_of_rows = 1;
 }
 depth = 10;
+message = "";
 </string>
           </argument>
         </arguments>
@@ -53,8 +54,13 @@ depth = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var fieldx = 128;
+            <string>//Where the drawing of the field begins
+var fieldx = 128;
 var fieldy = 128;
+//Where the drawing of the boxes begin
+var fieldxloc = fieldx+64;
+var fieldyloc = fieldy+64;
+
 var test_drawn = test_amt;
 //Draw Field
 draw_sprite(spr_field,0,fieldx,fieldy);
@@ -68,9 +74,19 @@ for (r=0;r&lt;amt_of_rows;r++) {
     } 
     //For statment for column
     for (i=0;i&lt;amt_to_draw;i++) {
-        draw_sprite(spr_field_box,0,fieldx+(64+(33*i)),fieldy+(63+(33*r)));
+        draw_sprite(spr_field_box,0,fieldxloc+(33*i),fieldyloc+(33*r));
         test_drawn--;
     }
+}
+//Check Where Button Is
+for (x=0;x&lt;amt_of_rows;x++) {
+    if(point_in_rectangle(mouse_x,mouse_y,view_xview[0]+fieldxloc,view_yview[0]+fieldyloc,view_xview[0]+fieldxloc+(33*15),view_yview[0]+fieldyloc+33))
+       {
+       message = "Inside Box";                                                                                                                                      
+    }else {
+       message = "Not Inside Box"; 
+    }
+    draw_text(view_xview[0]+15,view_yview[0]+15,message);     
 }
 </string>
           </argument>
